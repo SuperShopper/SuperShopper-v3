@@ -38,7 +38,7 @@ metaController.addNewItemsMetaWords = (req,res,next) => {
   let theId = res.locals.itemObj.item_id;   //item_id
   let queryStr = 'INSERT INTO meta (item_id, alias) values ';
   for (let i = 0; i < metaArr.length; i++) {
-    queryStr += `( ${theId}, '${metaArr[i]}' ), `;
+    queryStr += `( ${theId}, '${metaArr[i].trim()}' ), `;
   }
   queryStr = queryStr.trim();
   const queryStrArr = queryStr.split('');
