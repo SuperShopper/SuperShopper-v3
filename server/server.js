@@ -22,4 +22,4 @@ app.post('/addNewItem', itemController.addNewItem,
                         itemDetailsController.addNewItemDetail,
                         metaController.addNewItemsMetaWords);
 
-app.listen(3000); //listens on port 3000 -> http://localhost:3000/
+app.listen(8080); //listens on port 8080 -> http://localhost:8080/
