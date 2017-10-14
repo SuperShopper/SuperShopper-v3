@@ -27,6 +27,7 @@ class App extends Component {
 
   axios.get('http://localhost:8080/')
   .then((response) => {
+    console.log(response)
     this.setState((prevState, response) => {
       return {
         products: response,
