@@ -5,10 +5,11 @@ const bodyParser = require('body-parser');
 const itemController = require('./controllers/itemController');
 const itemDetailsController = require('./controllers/itemDetailsController');
 const metaController = require('./controllers/metaController');
-
+const cors = require('cors');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors());
 
 
 app.get('/', itemController.getTopItems);

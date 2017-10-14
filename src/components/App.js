@@ -23,9 +23,10 @@ class App extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
+
   axios.get('http://localhost:8080/')
-  .then(function (response) {
+  .then((response) => {
     this.setState((prevState, response) => {
       return {
         products: response,
@@ -43,14 +44,6 @@ class App extends Component {
       <div className="App">
         <Header />
         <SearchBar />
-        <Route
-          exact path='/'
-          render={(props) => <ProductList {...props} products={products} />}
-        />
-        <Route
-          path='/search'
-          render={(props) => <ProductList {...props} products={products} />}
-        />
       </div>
     );
   }
