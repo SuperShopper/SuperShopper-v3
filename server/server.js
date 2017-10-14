@@ -10,8 +10,9 @@ const metaController = require('./controllers/metaController');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(express.static(__dirname +'../public/')); //serves the index.html
 
-app.get('/', itemController.getTopItems);
+app.get('/getTopItems', itemController.getTopItems);
 
 app.post('/findItems', metaController.searchItems,
                        itemController.getAllItemsFromIds);

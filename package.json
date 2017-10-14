@@ -1,25 +1,39 @@
 {
-  "name": "shopper-app",
-  "version": "0.1.0",
-  "private": true,
+  "name": "SuperShopper",
+  "version": "1.0.0",
+  "description": "The Best shopping Service",
+  "main": "src/index.js",
+  "repository": "https://github.com/amorijs/react-boilerplate",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "serve": "live-server public",
+    "build": "webpack",
+    "dev-server": "webpack-dev-server"
+  },
   "dependencies": {
     "axios": "^0.16.2",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
     "express": "^4.16.2",
+    "live-server": "^1.2.0",
+    "node-sass": "^4.5.3",
     "pg": "^6.4.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.6.0"
   },
   "devDependencies": {
-    "react-scripts": "1.0.14"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "start-server": "node server/server.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "webpack-dev-server": "^2.8.2"
   }
 }
