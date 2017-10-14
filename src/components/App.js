@@ -1,45 +1,33 @@
 // modules
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import axios from 'axios';
 // styles
-import '../styles/App.css';
+// import  '../styles/App.css';
 // components
 import Header from './Header';
 import SearchBar from './SearchBar';
-import ProductList from './ProductList';
-
+import Recommendation from './Recommendation';
+import SearchResult from './SearchResult';
 
 class App extends Component {
   constructor(props) {
-    super(props)
-    this.state = {
-      url: '/',
-      products: [
-        { _id: 1, title: 'motor oil', price: '$5.95'},
-        { _id: 2, title: 'beach ball', price: '$3,000.00'},
-      ],
-      productId: '',
-    }
+    super(props);
+    console.log('App is ebeing Rendered..');
+
   }
 
   render() {
-    const products = this.state.products;
+    const buttonLabel = this.props.buttonStatus ? "ON" : "OFF";
     return (
       <div className="App">
         <Header />
         <SearchBar />
-        <Route
-          exact path='/'
-          render={(props) => <ProductList {...props} products={products} />}
-        />
-        <Route
-          path='/search'
-          render={(props) => <ProductList {...props} products={products} />}
-        />
+        <Route exact path='/' component={Recommendation} />
+        <Route path='/search' component={SearchResult} />
       </div>
     );
   }
 }
+
 
 export default App;
