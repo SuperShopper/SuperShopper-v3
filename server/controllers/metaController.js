@@ -12,7 +12,8 @@ const metaController = {};
 */
 metaController.searchItems = (req, res, next) => {
 let queryName = req.body.searchWord.toLowerCase();
-let metaQuery = "SELECT DISTINCT item_id FROM meta WHERE alias LIKE '%"+queryName+"%'";
+let metaQuery = "SELECT DISTINCT item_id FROM meta WHERE LOWER(alias) LIKE '%"+queryName+"%'";
+  console.log("Query Name: ", queryName)
   db.conn.query(metaQuery, (err, data) => {
     if (err) return res.status(404).send('An error occurred on db query');
     if (!data.rows.length) return res.status(404).send('Not found');

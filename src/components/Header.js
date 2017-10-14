@@ -5,7 +5,7 @@ import homeLogo from '../img/homeIcon.png';
 const styles = {
   width: '100%',
   height: '75px',
-  backgroundColor: 'blue',
+  backgroundColor: '#3a5d72',
   color: 'white',
 }
 
